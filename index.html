@@ -6,10 +6,28 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>E-Metro</title>
+  <style>
+    #connect-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 16px 35px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 5px 5px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  </style>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  
+  <!-- Web3 js link -->
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+   
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
@@ -47,7 +65,7 @@
             <li><a class="nav-link scrollto " href="#portfolio">Pricing</a></li>
          
            
-            <li><a class="getstarted scrollto" href="#about">Book Ticket</a></li>
+            <li><input type="button" id="connect-button" value="Connect Wallet" onclick="connect();"></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -207,6 +225,28 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+
+  <script>
+      /* To connect using MetaMask */
+      async function connect() {
+        if (window.ethereum) {
+          await window.ethereum.request({ method: "eth_requestAccounts" });
+          window.web3 = new Web3(window.ethereum);
+          const account = web3.eth.accounts;
+          //Get the current MetaMask selected/active wallet
+          const walletAddress = account.givenProvider.selectedAddress;
+          
+          //Get the balance of Matic for the connected wallet address
+          const balance = await web3.eth.getBalance(walletAddress);
+          const maticBalance = web3.utils.fromWei(balance).substring(0, 4);
+          
+          const shortenedAddress = `${walletAddress.substr(0, 4)}...${walletAddress.substr(-5)}`;
+          document.getElementById("connect-button").value = `${maticBalance} Matic | Wallet: ${shortenedAddress}`;
+        } else {
+          console.log("No wallet");
+        }
+      }
+    </script>
   
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
