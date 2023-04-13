@@ -65,7 +65,7 @@
             <li><a class="nav-link scrollto " href="#portfolio">Pricing</a></li>
          
            
-            <li><input type="button" id="connect-button" value="Connect Wallet" onclick="connect();"></li>
+            <li><input type="button" id="connect-button" value="Connect Wallet" onclick="connect(event);"></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -228,7 +228,8 @@
 
   <script>
       /* To connect using MetaMask */
-      async function connect() {
+      async function connect(event) {
+        event.preventDefault();
         if (window.ethereum) {
           await window.ethereum.request({ method: "eth_requestAccounts" });
           window.web3 = new Web3(window.ethereum);
@@ -243,7 +244,7 @@
           const shortenedAddress = `${walletAddress.substr(0, 4)}...${walletAddress.substr(-5)}`;
           document.getElementById("connect-button").value = `${maticBalance} Matic | Wallet: ${shortenedAddress}`;
         } else {
-          console.log("No wallet");
+          alert("Please install Metamask!");
         }
       }
     </script>
