@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,24 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>E-Metro</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>  
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+ 
+ 
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href=".../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+ 
+ 
+  <link href="../assets/css/style.css" rel="stylesheet">
   <style>
     #logout-button {
   background-color: #f44336; /* Red */
@@ -36,27 +55,6 @@
       border-radius: 8px;
     }
   </style>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Web3 js link -->
-
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
-   
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
- 
- 
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
- 
- 
-  <link href="../assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -83,6 +81,8 @@
             <li><span id="user-address"></span></li>
             <li><span id="user-balance"></span></li>
           </div>
+           
+            <li><a class="getstarted scrollto" href="#about">Book Ticket</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -98,7 +98,7 @@
       <h2>We are ready to serve you onboard</h2>
       
 
-      <a href="#about" class="btn-get-started scrollto">Book Ticket </a>
+      
         <input type="button" class="btn-get-started scrollto" style="background-color:#1844b4;color:white;border:none;text-align: center;display: inline-block;
           
            font-size: 18px;
@@ -148,6 +148,7 @@
         </div>
         
         <input type="date"class="form-control"name="Date"placeholder="MM/DD/YYYY" onfocus="(this.type='date')"id="inputdate">
+        <input type="Time"class="form-control"name="Time"id="inputtime"placeholder="Time">
         <br>
         <button type="submit" class="btn btn-primary">Book</button>
       </form>
@@ -167,7 +168,105 @@
   </section><!-- End Hero -->
 
   <main id="main">
+ <!-- ======= Why Us Section ======= -->
+ <section id="why-us" class="why-us">
+  <div class="container">
 
+    <div class="row">
+      <div class="col-lg-4 d-flex align-items-stretch" data-aos="fade-right">
+        <div class="content">
+          <h3>Why  to Choose E-Metro ?</h3>
+          <p>
+            E-Metro is a user-friendly website that revolutionizes the way you book metro tickets. With just a few clicks, you can conveniently purchase metro tickets online from the comfort of your home or on the go. Say goodbye to long queues and waiting times at ticket counters
+          </p>
+          <div class="text-center">
+            <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 d-flex align-items-stretch">
+        <div class="icon-boxes d-flex flex-column justify-content-center">
+          <div class="row">
+            <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box mt-4 mt-xl-0">
+                <i class="bx bx-receipt"></i>
+                <h4>Easy and Covinient </h4>
+                <p>Booking your metro tickets through E-Metro is incredibly easy.  </p>
+              </div>
+            </div>
+            <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box mt-4 mt-xl-0">
+                <i class="bx bx-cube-alt"></i>
+                <h4>More Secure </h4>
+                <p>Security and privacy are of utmost importance at E-Metro with Blockchain .</p>
+              </div>
+            </div>
+            <div class="col-xl-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box mt-4 mt-xl-0">
+                <i class="bx bx-images"></i>
+                <h4>Multiple Services</h4>
+                <p>E-Metro provides a comprehensive range of metro services, covering multiple cities and their respective metro networks. </p>
+              </div>
+            </div>
+          </div>
+        </div><!-- End .content-->
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Why Us Section -->
+
+ <!-- ======= Services Section ======= -->
+ <section id="services" class="services section-bg">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="section-title" data-aos="fade-right">
+          <h2>Services</h2>
+          <p>Introducing E-Metro: Your Convenient Online Metro Ticket Booking Platform.</p>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-stretch">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="">Online Ticket Booking </a></h4>
+              <p>You can book your ticket easily through E-Metro</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">E-Metro Card</a></h4>
+              <p>You can issue E-Metro Card it will provide Credit</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">E-Metro Hospitilty</a></h4>
+              <p>We take care of our customers and provide good services </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 d-flex align-items-stretch mt-4">
+            <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+              <div class="icon"><i class="bx bx-world"></i></div>
+              <h4><a href="">E-Metro Cleaning Services</a></h4>
+              <p>E-Metro also provide metro cleaning services collaboration With Think & Wash </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Services Section -->
 
   </main><!-- End #main -->
 
@@ -181,7 +280,7 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>E-Metro</h3>
             <p>
-             Demo <br><br>
+              E-Metro is a user-friendly website that revolutionizes the way you book metro tickets. With just a few clicks, you can conveniently purchase metro tickets online from the comfort of your home or on the go. Say goodbye to long queues and waiting times at ticket counters <br><br>
               <strong>Phone:</strong> +123456789<br>
               <strong>Email:</strong> demo<br>
             </p>
@@ -201,11 +300,11 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Demo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Demo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Demo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Demo</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Demo</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">E- Ticket</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">E-Card</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Hospitilty</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cleaning Services</a></li>
+              
             </ul>
           </div>
 
@@ -241,8 +340,8 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
 
+  
   <script>
     async function logout() {
       window.location.href = '../index.html';
@@ -254,7 +353,14 @@
     document.getElementById("user-balance").textContent = maticBalance + " MATIC";
   </script>
 
+
+  <!-- Vendor JS Files -->
+
+
+  
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
 
   <script src="../assets/js/main.js"></script>
 
